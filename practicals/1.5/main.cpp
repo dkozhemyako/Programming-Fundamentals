@@ -1,18 +1,16 @@
 #include <iostream>
 #include <vector>
-#include <limits> // Для std::numeric_limits
+#include <limits> 
 
-// Функція для знаходження індексу першого входження P
 int findFirstOccurrence(const std::vector<int>& A, int P) {
     for (int i = 0; i < A.size(); ++i) {
         if (A[i] == P) {
-            return i; // Повертаємо індекс
+            return i; 
         }
     }
-    return -1; // Якщо не знайдено
+    return -1;
 }
 
-// Функція для знаходження найменшого значення серед додатних елементів
 int findMinPositive(const std::vector<int>& A) {
     int minPositive = std::numeric_limits<int>::max();
     for (int num : A) {
@@ -20,10 +18,9 @@ int findMinPositive(const std::vector<int>& A) {
             minPositive = num;
         }
     }
-    return (minPositive == std::numeric_limits<int>::max()) ? -1 : minPositive; // Якщо немає додатних, повертаємо -1
+    return (minPositive == std::numeric_limits<int>::max()) ? -1 : minPositive; 
 }
 
-// Функція для обміну найбільшого та найменшого значення
 void swapMinMax(std::vector<int>& A) {
     if (A.empty()) return;
 
@@ -39,20 +36,18 @@ void swapMinMax(std::vector<int>& A) {
         }
     }
 
-    // Обмінюємо місцями
     std::swap(A[minIndex], A[maxIndex]);
 }
 
 int main() {
     int n, P;
 
-    // Введення розміру послідовності
+   
     std::cout << "Введіть кількість елементів: ";
     std::cin >> n;
 
     std::vector<int> A(n);
 
-    // Введення елементів послідовності
     std::cout << "Введіть елементи послідовності:\n";
     for (int i = 0; i < n; ++i) {
         std::cin >> A[i];
