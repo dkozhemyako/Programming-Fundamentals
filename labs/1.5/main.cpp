@@ -6,34 +6,28 @@
  */
 
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
 int main() {
-    {
-        int a = 10;
-        int b = 20;
-        int c = 30;
-        int d = 40;
+    // Перше завдання
+    float A1 = 3.56;
+    float B1 = 89.45;
+    int C1 = 15;
+    float D1 = 56.2;
 
-        // <УЛО1> (<УЛО2> (A<ОВ1>B) <БЛО> (<УЛО3> (C<ОВ2>D)))
-        //  empty (  !    (a == b)    ^   (   !   (c != d)))
-        bool res = (!(a == b) ^ (!(c != d)));
-        cout << "res: " << boolalpha << res << endl;
-    }
+    bool result = !(!(A1 != B1) && (!(C1 < D1)));
+    cout << "Результат виразу 1: " << (result ? "true" : "false") << endl;
 
-    {
-        int a = 10;
-        int b = 20;
-        int c = 30;
-        int d = 40;
+    // Друге завдання
+    int A2 = 593;
+    int B2 = -145;
+    float C2 = 9.23;
+    int D2 = 43;
+    int E = 891;
 
-        // <УЛО1> (<УЛО2> (A<ОВ1>B) <БЛО> (<УЛО3> (C<ОВ2>D)))
-        //  empty (  !    (a == b)    and   (   !   (c != d)))
-        bool res = (!(a == b) and (!(c != d)));
-        cout << "res: " << boolalpha << res << endl;
-    }
+    short F = A2 ^ (-B2 / (sizeof(C2) > D2) * E) >> D2;
+    cout << "Результат виразу 2: " << F << endl;
 
     return 0;
 }
