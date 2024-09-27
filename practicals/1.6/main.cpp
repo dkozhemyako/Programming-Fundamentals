@@ -63,7 +63,6 @@ int main() {
     std::cout << "Enter second binary sequence: ";
     std::cin >> seq2;
 
-    // Виконання операції XOR
     std::string xorResult = xorBinarySequences(seq1, seq2);
     std::cout << "XOR result: " << xorResult << "\n";
 
