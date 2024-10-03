@@ -1,3 +1,10 @@
+/**
+ * Done by:
+ * Student Name: Dima Kozhemiako
+ * Student Group: 123
+ * Prac 1.5
+ */
+
 #include <iostream>
 #include <vector>
 #include <limits> 

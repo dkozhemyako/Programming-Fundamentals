@@ -6,7 +6,6 @@
 *.dll
 *.dylib
 *.so
-*.dylib
-.vscode
-.vs
+.vscode/
+.vs/
 
