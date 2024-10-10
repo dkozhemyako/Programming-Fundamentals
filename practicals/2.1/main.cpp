@@ -9,60 +9,57 @@
 #include <vector>
 
 int main() {
-    int m; // Кількість послідовностей
-    std::cout << "Введіть кількість послідовностей: ";
+    int m; 
+    std::cout << "Enter the number of sequences: ";
     std::cin >> m;
 
-    // Створюємо матрицю
     std::vector<std::vector<int>> A(m);
 
-    // Введення даних
+    
     for (int i = 0; i < m; i++) {
-        int n; // Кількість елементів у поточній послідовності
-        std::cout << "Введіть кількість елементів у послідовності " << i + 1 << ": ";
+        int n; 
+        std::cout << "Enter the number of elements in the sequence " << i + 1 << ": ";
         std::cin >> n;
 
-        A[i].resize(n); // Задаємо розмір послідовності
-        std::cout << "Введіть елементи: ";
+        A[i].resize(n);
+        std::cout << "Enter element: ";
         for (int j = 0; j < n; j++) {
-            std::cin >> A[i][j]; // Введення елементів
+            std::cin >> A[i][j]; 
         }
     }
 
-    // Пошук мінімального значення
-    int minValue = A[0][0]; // Припустимо, що перше значення - мінімальне
+    
+    int minValue = A[0][0];
 
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < A[i].size(); j++) {
             if (A[i][j] < minValue) {
-                minValue = A[i][j]; // Оновлюємо мінімальне значення
+                minValue = A[i][j]; 
             }
         }
     }
 
-    // Пошук максимального від'ємного значення
-    int maxNegative = 0; // Ініціалізація (припустимо, що не буде значень < 0)
-    bool foundNegative = false; // Прапорець для перевірки
+    int maxNegative = 0; 
+    bool foundNegative = false; 
 
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < A[i].size(); j++) {
             if (A[i][j] < 0) {
                 if (!foundNegative || A[i][j] > maxNegative) {
-                    maxNegative = A[i][j]; // Оновлюємо максимальне від'ємне значення
-                    foundNegative = true; // Знайдено від'ємне значення
+                    maxNegative = A[i][j]; 
+                    foundNegative = true;
                 }
             }
         }
     }
 
-    // Вивід результатів
-    std::cout << "Мінімальне значення: " << minValue << std::endl;
+    std::cout << "Min: " << minValue << std::endl;
 
     if (foundNegative) {
-        std::cout << "Максимальне від'ємне значення: " << maxNegative << std::endl;
+        std::cout << "Max neg.: " << maxNegative << std::endl;
     }
     else {
-        std::cout << "Від'ємних значень не знайдено." << std::endl;
+        std::cout << "No neg." << std::endl;
     }
 
     return 0;
